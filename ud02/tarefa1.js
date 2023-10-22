@@ -13,14 +13,14 @@ while (fibonacci.length < 10) {
 console.log(fibonacci.toString());
 //Número primo
 console.log("----------------- Número primo -------");
-let primo=20;
+let primo=13;
 let iteracion=0;
 let restoCeroVeces=0;
 do{
    if((primo%iteracion)==0){
      restoCeroVeces++;
    }else if(restoCeroVeces>=3){
-    console.log("El número no es primo");
+    console.log(`El número ${primo} NO es primo`);
     break;
    }
     iteracion++;
