@@ -1,0 +1,13 @@
+var numero = 125;
+var resultado = 0;
+resultado = numero >> 3;
+console.log("Divis\u00F3n entre 8 del n\u00FAmero ".concat(numero, " el resultado es ").concat(resultado));
+numero = 40;
+resultado = numero << 2;
+console.log("Multiplicaci\u00F3n por 4 del n\u00FAmero ".concat(numero, " el resultado es ").concat(resultado));
+numero = 25;
+resultado = numero >> 1;
+console.log("Divis\u00F3n entre 2 del n\u00FAmero ".concat(numero, " el resultado es ").concat(resultado));
+numero = 10;
+resultado = numero << 4;
+console.log("Multiplicaci\u00F3n por 16 del n\u00FAmero ".concat(numero, " el resultado es ").concat(resultado));
