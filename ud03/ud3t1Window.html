@@ -1,6 +1,7 @@
 <!DOCTYPE  html>
 <html>
     <head>
+        <META HTTP-EQUIV="Access-Control-Allow-Origin" CONTENT="file:///home/vagrant/Documentos/DWCC/ud03/ud3t1Window.html">
         <meta  http-equiv="content-type"  content="text/html;charset=utf-8">
         <title>Apertura y Cierre de Ventanas</title>
         <button onclick="cerrarVentanaHija()">Cerrar ventana hija</button>
@@ -21,6 +22,7 @@
                     nuevaVentana.close(); nuevaVentana  =  null;
                 }
             }*/
+          //  document.domain = "file:///home/vagrant/Documentos/DWCC/ud03/ud3t1Window.html";
             let  respuesta=false;
             respuesta=self.confirm("Queres abrir unha nova ventá");
             let ventana;
@@ -29,7 +31,12 @@
             }
 
             function cerrarVentanaHija(){
-                ventana.close();
+                if(ventana.open){
+                    ventana.close();
+                }else{
+                    alert("La ventana ya está cerrada");
+                }
+               
             }
 
         </script>
