@@ -29,13 +29,35 @@
                 }
             }
             document.getElementById('data').innerHTML+='<br><br>Los siguientes años serán fin de semana en tu cumpleaños: '+anosWeekend.toString() ;
+            let comandoUser = window.prompt("Escriba 1,2 ou 3 en función de como que que saia a data");
+            let dataAhora = new Date();
+            console.log("COmand"+comandoUser);
+            let dia , ano =0;
+            switch (comandoUser) {
+                case "1":
+                   dia= dataAhora.getDate();
+                    let mes= dataAhora.getMonth()+1;
+                     ano= dataAhora.getFullYear();
+                    document.getElementById('data').innerHTML+='<br><br>El día de hoy es: '+dia+'/'+mes+'/'+ano;
+                    break;
+                case "2":
+                    dia = dataAhora.getDate();
+                    ano= dataAhora.getFullYear();
+                    let meses = [  'Xaneiro', 'Febreiro', 'Marzo', 'Abril', 'Maio', 'Xuño',  'Xullo', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Decembro'];
+                    let diasSemana = ['Domingo', 'Luns', 'Martes', 'Mércores', 'Xoves', 'Venres', 'Sábado'];
+                    document.getElementById('data').innerHTML+='<br><br>El día de hoy es: '+diasSemana[dataAhora.getDay()]+', '+dia+' de '+meses[dataAhora.getMonth()]+' de '+ano;
+                    break;
+                case "3":
+                    let opciones = {
+                            weekday: 'long',
+                            month: 'long',
+                            day: 'numeric',
+                            year: 'numeric'
+                            };
+                    let fechaEnIngles = dataAhora.toLocaleString('en-US', opciones);
+                    document.getElementById('data').innerHTML+='<br><br>El día de hoy es: '+fechaEnIngles;
 
-           //Amosar data actual PM AM
-            let dataActual=new Date();
-            let curr_date = dataActual.getDate();
-            let curr_month = dataActual.getMonth();
-            let curr_year = dataActual.getFullYear();
-            document.write(curr_date + "-" + curr_month + "-" + curr_year);
+            }
         </script>
     </head>
      
