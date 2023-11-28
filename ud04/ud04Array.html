@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UD3. JavaScript Window</title>
+    <meta charset="utf-8">
+</head>
+ 
+<script >
+  const paises= ['Argentina','Brasil','Canada','España','Francia','Alemania'];
+  document.write(`<h2> El número de elementos del array es ${paises.length}<\h2><br>
+    <h2> Todos los paises del array son:<\h2><h3>${paises.valueOf()}<\h3><br>
+    <h2> Todos los paises del array al revés son:<\h2><h3>${paises.reverse().valueOf()}<\h3>`);
+        
+    paises.reverse();
+    paises.unshift('Coreo del Norte');
+    document.write(`<h2> Nuevo pais al pricipio del array:<\h2><h3>${paises.valueOf()}<\h3>`);
+    paises.push('China');
+    document.write(`<h2> Nuevo pais al final del array:<\h2><h3>${paises.valueOf()}<\h3>`);
+    paises.shift();
+    document.write(`<h2> El elemento eliminado el principio del array fue  Corea del Norte:<\h2><h3>${paises.valueOf()}<\h3>`);
+    paises.pop();
+    document.write(`<h2> El elemento eliminado al final del array fue China:<\h2><h3>${paises.valueOf()}<\h3>`);
+ 
+   </script>
+    
+</body>
+</html>
