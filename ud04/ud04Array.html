@@ -20,7 +20,23 @@
     document.write(`<h2> El elemento eliminado el principio del array fue  Corea del Norte:<\h2><h3>${paises.valueOf()}<\h3>`);
     paises.pop();
     document.write(`<h2> El elemento eliminado al final del array fue China:<\h2><h3>${paises.valueOf()}<\h3>`);
- 
+        let posicion = window.prompt("Escriba la posición del array que quiere ver:");
+    data=(paises.length-1);
+    if(posicion>data){
+        alert("El array no tiene tantos paises");
+    }else{
+        document.write(`<h2> En la posición ${posicion} está el país:<\h2><h3>${paises[posicion]}<\h3>`);
+    }
+    let elemento = window.prompt("Escriba el elemento del array que quiere ver:");
+    const posicion2= paises.indexOf(elemento);
+     if(posicion!==-1){
+        document.write(`<h2> El pais ${elemento} está en la posición: <\h2><h3> ${posicion2}<\h3> `);
+    }
+    let p1 = window.prompt("Elija la posición de incio por donde quiere ver el array:");
+    let p2 = window.prompt("Elija la posición de fin por donde quiere ver el array:");
+    let paiSlice=paises.slice(p1,p2);
+    document.write(`<h2>Los paises entre la posición ${p1} y ${p2} son: <\h2><h3> ${paiSlice.valueOf()}<\h3> `);
+    
    </script>
     
 </body>
