@@ -74,10 +74,10 @@
     }
 
     function posicionInicioFinal(datos){
-        let p1 = window.prompt("Elija la posición de incio por donde quiere ver el array:");
+        let p1 = parseInt(window.prompt("Elija la posición de incio por donde quiere ver el array:"));
         let p2 = window.prompt("Elija la posición de fin por donde quiere ver el array:");
-        p1++;
-        let paiSlice=datos.slice(p1,p2);
+        let p12=p1+1;
+        let paiSlice=datos.slice(p12,p2);
         document.write(`<h2>Los paises entre la posición ${p1} y ${p2} son: <\h2><h3> ${paiSlice.valueOf()}<\h3> `);
     }
 
