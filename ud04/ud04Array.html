@@ -10,13 +10,10 @@
   document.write(`<h2> El número de elementos del array es ${tamano(paises) }<\h2><br>
     <h2> Todos los paises del array son:<\h2><h3>${enumData(paises)}<\h3><br>
     <h2> Todos los paises del array al revés son:<\h2><h3>${enumDataGirada(paises)}<\h3>`);
-   
-    document.write(`<h2> Nuevo pais al pricipio del array:<\h2><h3>${ addPaisArray(paises,'Corea del Norte')}<\h3>`);
-   /* paises.push('China');
-    document.write(`<h2> Nuevo pais al final del array:<\h2><h3>${paises.valueOf()}<\h3>`);
-    paises.shift();
-    document.write(`<h2> El elemento eliminado el principio del array fue  Corea del Norte:<\h2><h3>${paises.valueOf()}<\h3>`);
-    paises.pop();
+    document.write(`<h2> Nuevo pais al pricipio del array:<\h2><h3>${ addPaisInicioArray(paises,'Corea del Norte')}<\h3>`);
+    document.write(`<h2> Nuevo pais al final del array:<\h2><h3>${addPaisFinalArray(paises,'China')}<\h3>`);
+    document.write(`<h2> El elemento eliminado el principio del array fue  Corea del Norte:<\h2><h3>${eliminarPaisIniciorray(paises)}<\h3>`);
+    /*paises.pop();
     document.write(`<h2> El elemento eliminado al final del array fue China:<\h2><h3>${paises.valueOf()}<\h3>`);
         let posicion = window.prompt("Escriba la posición del array que quiere ver:");
     data=(paises.length-1);
@@ -44,15 +41,28 @@
     }
 
     function enumDataGirada(datos) {
-       let datos2=datos;
+       let datos2= datos.slice();
     return datos2.reverse().valueOf();
     }
 
-    function addPaisArray(datos, pais) {
+    function addPaisInicioArray(datos, pais) {
        
      datos.unshift(pais)
     return datos.valueOf();
     }
+
+    function addPaisFinalArray(datos, pais) {
+       
+     datos.push(pais)
+    return datos.valueOf();
+    }
+
+    function eliminarPaisIniciorray(datos) {
+       
+     datos.shift();
+    return datos.valueOf();
+    }
+
    </script>
     
 </body>
