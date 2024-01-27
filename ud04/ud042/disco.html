@@ -24,14 +24,49 @@ function Disco(nome,grupo, ano,tipo,prestado){
       var tituloElement = document.createElement('p');
       tituloElement.textContent = "Nombre: " + this.nome;
       infoContainer.appendChild(tituloElement);
-      document.body.appendChild(infoContainer);
+     // document.body.appendChild(infoContainer);
+     return infoContainer;
     }
 }
 
-var miDisco  = new Disco("Nevermind", "Nirvana", 1991, ["Smells Like Teen Spirit", "Come as You Are", "Lithium"], "Rock", true);
-var miDisco  = new Disco("In Utero", "Artista Ejemplo", 2022, ["Canción 1", "Canción 2", "Canción 3"], "Pop", true);
+function Discografia(){
+    this.Discos=[];
 
-miDisco.mostrarInformacion();
+    this.agregarDisco=function(d){
+        this.Discos.push(d);
+    }
+
+    this.mostrarDiscografia=function(){
+        var discografiaContainer = document.createElement('div');
+        this.Discos.forEach(function(disco) {
+        var discoContainer = document.createElement('div');
+        discoContainer.style.border = '1px solid #ccc';
+        discoContainer.style.padding = '10px';
+        discoContainer.style.marginBottom = '10px';
+
+        
+        //disco.mostrarInformacion()
+
+        discografiaContainer.appendChild(disco.mostrarInformacion());
+        document.body.appendChild(discografiaContainer);
+    });
+
+    }
+
+
+}
+
+var miDisco  = new Disco("Nevermind", "Nirvana", 1991, ["Smells Like Teen Spirit", "Come as You Are", "Lithium"], "Rock", true);
+var miDisco2  = new Disco("Rainbow Bridge", "Jimmy Hendrix", 1971, ["Dolly Dagger", "Pali Gap", "Earth Blues"], "Pop", true);
+var miDiscografia = new Discografia();
+
+//miDisco.mostrarInformacion();
+
+miDiscografia.agregarDisco(miDisco);
+miDiscografia.agregarDisco(miDisco2);
+miDiscografia.mostrarDiscografia();
+
+
 </script>
     
 </body>
