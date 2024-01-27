@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UD4.2. JavaScript Object Window</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<script >
+  
+
+
+
+
+function Disco(nome,grupo, ano,tipo,prestado){
+    this.nome=nome;
+    this.grupo=grupo;
+    this.ano=ano;
+    this.tipo=tipo;
+    this.prestado=prestado || false;
+
+    this.mostrarInformacion= function(){
+
+      var infoContainer = document.createElement('div');
+      var tituloElement = document.createElement('p');
+      tituloElement.textContent = "Nombre: " + this.nome;
+      infoContainer.appendChild(tituloElement);
+      document.body.appendChild(infoContainer);
+    }
+}
+
+var miDisco  = new Disco("Nevermind", "Nirvana", 1991, ["Smells Like Teen Spirit", "Come as You Are", "Lithium"], "Rock", true);
+var miDisco  = new Disco("In Utero", "Artista Ejemplo", 2022, ["Canción 1", "Canción 2", "Canción 3"], "Pop", true);
+
+miDisco.mostrarInformacion();
+</script>
+    
+</body>
+</html>
