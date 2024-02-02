@@ -11,32 +11,61 @@
 
 
 
-function Disco(nome,grupo, ano,tipo,prestado){
-    this.nome=nome;
-    this.grupo=grupo;
-    this.ano=ano;
-    this.tipo=tipo;
+class Disco{
+    nome;
+    grupo;
+    ano;
+    tipo;
+    prestado;
+
+    constructor(nome,grupo, ano,tipo,prestado){
+     this.nome=nome;
+     this.grupo=grupo;
+        this.ano=ano;
+     this.tipo=tipo;
     this.prestado=prestado || false;
 
-    this.mostrarInformacion= function(){
+    }
+
+    set nome(value) {
+        this.nome = value;
+    }
+  set grupo(value) {
+    this.grupo = value;
+  }
+  
+  set ano(value) {
+    this.ano = value;
+  }
+  set tipo(value) {
+    this.tipo = value;
+  }
+  set prestado(value) {
+    this.prestado = value;
+  }
+
+
+   
+    mostrarInformacion(){
 
       var infoContainer = document.createElement('div');
       var tituloElement = document.createElement('p');
-      tituloElement.textContent = "Nombre: " + this.nome;
+      tituloElement.textContent = "Nombre: " + this.nome+" Grupo: "+this.grupo+" Ano: "+this.ano+ " Tipo: "+this.tipo+" Prestado: "+this.prestado ;
       infoContainer.appendChild(tituloElement);
      // document.body.appendChild(infoContainer);
+     //Falta mostrar toda la info del disco
      return infoContainer;
     }
 }
 
-function Discografia(){
-    this.Discos=[];
-
-    this.agregarDisco=function(d){
+class Discografia{
+    Discos=[];
+    
+    agregarDisco=function(d){
         this.Discos.push(d);
     }
 
-    this.mostrarDiscografia=function(){
+    mostrarDiscografia(){
         var discografiaContainer = document.createElement('div');
         this.Discos.forEach(function(disco) {
         var discoContainer = document.createElement('div');
@@ -60,11 +89,13 @@ var miDisco  = new Disco("Nevermind", "Nirvana", 1991, ["Smells Like Teen Spirit
 var miDisco2  = new Disco("Rainbow Bridge", "Jimmy Hendrix", 1971, ["Dolly Dagger", "Pali Gap", "Earth Blues"], "Pop", true);
 var miDiscografia = new Discografia();
 
-//miDisco.mostrarInformacion();
+miDisco.mostrarInformacion();
 
 miDiscografia.agregarDisco(miDisco);
 miDiscografia.agregarDisco(miDisco2);
 miDiscografia.mostrarDiscografia();
+miDisco.nome="NombreCambiado";
+document.body.appendChild(miDisco.mostrarInformacion());
 
 
 </script>
